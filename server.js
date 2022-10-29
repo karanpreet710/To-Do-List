@@ -29,7 +29,7 @@ app.use(passport.session())
 mongoose.connect(process.env.DATABASE_URL);
 
 const userSchema = new mongoose.Schema({
-    email: String,
+    username:String,
     password: String,
     googleId: String,
     tasks:Array
