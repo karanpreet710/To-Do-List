@@ -133,7 +133,7 @@ app.post('/register', async (req, res) => {
     // else{
     //     console.error(new Error('Error in creating user'))
     // }
-    User.register({ username: req.body.username }, req.body.password, function (err, user) {
+    User.register({ email: req.body.email }, req.body.password, function (err, user) {
         if (err) {
             console.error(err)
             res.redirect('/register')
@@ -154,7 +154,7 @@ app.post('/login', (req, res) => {
     //     res.render('to-do-list')
     // }
     const user = new User({
-        username: req.body.username,
+        email: req.body.email,
         password: req.body.password
     })
     req.login(user, function (err) {
